@@ -25,13 +25,60 @@
     // 🐨 Please re-implement the regular document.createElement code above
     // with these React API calls
     // 💰 The example in the markdown file should be a good hint for you.
-    const elementProps = {
-      id: 'container',
+    // const elementProps = {
+    //   id: 'container',
+    //   className: 'container',
+    //   children: 'Hello World',
+    // }
+    // const elementType = 'div'
+    // const reactElement = React.createElement(elementType, elementProps)
+    // ReactDOM.render(reactElement, rootElement)
+
+    // Extra credit solution:
+    // const firstSpanProps = {
+    //   children: 'Hello',
+    // }
+    // const firstSpanType = 'span'
+    // const firstSpanElement = React.createElement(firstSpanType, firstSpanProps)
+
+    // const secondSpanProps = {
+    //   children: 'World',
+    // }
+    // const secondSpanType = 'span'
+    // const secondSpanElement = React.createElement(
+    //   secondSpanType,
+    //   secondSpanProps,
+    // )
+
+    // const containerProps = {
+    //   className: 'container',
+    //   children: [firstSpanElement, secondSpanElement],
+    // }
+    // const containerType = 'div'
+    // const containerElement = React.createElement(containerType, containerProps)
+    // ReactDOM.render(containerElement, rootElement)
+
+    // Optimal extra credit solution:
+    const element = React.createElement('div', {
       className: 'container',
-      children: 'Hello World',
-    }
-    const elementType = 'div'
-    const reactElement = React.createElement(elementType, elementProps)
-    ReactDOM.render(reactElement, rootElement)
+      children: [
+        React.createElement('span', null, 'Hello'),
+        ' ',
+        React.createElement('span', null, 'World'),
+      ],
+    })
+    // The above can also be written as below, children can be an argument of createElement method.
+    // const element = React.createElement(
+    //   'div',
+    //   {
+    //     className: 'container',
+    //   },
+    //   [
+    //     React.createElement('span', null, 'Hello'),
+    //     ' ',
+    //     React.createElement('span', null, 'World'),
+    //   ],
+    // )
+    ReactDOM.render(element, rootElement)
   </script>
 </body>
